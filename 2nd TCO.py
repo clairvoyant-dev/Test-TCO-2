@@ -172,11 +172,8 @@ with col3:
 with col4:
     st.write(f"**Recommendation :  {recommendation}**")
     
-st.subheader("Sensitivity to hydrogen price")
-st.caption(
-    "Hydrogen TCO traced across $1–$20/kg, all other inputs held at current slider values. "
-    "Battery TCO shown as a flat reference line."
-)
+st.subheader("Breakeven Electric vs hydrogen price ")
+
 
 prices = np.linspace(1, 20, 100)
 hydrogen_costs = []
