@@ -69,61 +69,75 @@ against each other and, in the chart below, across a full range of hydrogen pric
 
 st.subheader("Adjust Input Values")
 
-col1, col2, col3 = st.columns(3)
-
 with col1:
-    st.markdown("**Battery-electric bus (BEB)**")
-    beb_purchase = st.slider(
-        "Purchase price ($)",
-        500_000, 1_200_000, 850_000, 10_000
-    )
+    st.markdown("** Battery-electric bus (BEB)**")
 
-    beb_maintenance = st.slider(
-        "Maintenance ($/mile)",
-        0.10, 2.00, 0.90, 0.01
-    )
+    r1, r2 = st.columns(2)
 
-    beb_efficiency = st.slider(
-        "Efficiency (kWh/mile)",
-        1.0, 5.0, 2.5, 0.1
-    )
+    with r1:
+        beb_purchase = st.slider(
+            "Purchase ($)",
+            500_000, 1_200_000, 850_000, 10_000
+        )
 
-    electricity_price = st.slider(
-        "Electricity price ($/kWh)",
-        0.05, 0.50, 0.15, 0.01
-    )
+    with r2:
+        beb_maintenance = st.slider(
+            "Maintenance ($/mile)",
+            0.10, 2.00, 0.90, 0.01
+        )
+
+    r3, r4 = st.columns(2)
+
+    with r3:
+        beb_efficiency = st.slider(
+            "Efficiency (kWh/mile)",
+            1.0, 5.0, 2.5, 0.1
+        )
+
+    with r4:
+        electricity_price = st.slider(
+            "Electricity ($/kWh)",
+            0.05, 0.50, 0.15, 0.01
+        )
 
 with col2:
-    st.markdown("**Hydrogen fuel-cell bus (FCEB)**")
-    fceb_purchase = st.slider(
-        "Purchase price ($)",
-        500_000, 1_500_000, 1_000_000, 10_000
-    )
+    st.markdown("** Hydrogen fuel-cell bus (FCEB)**")
 
-    fceb_maintenance = st.slider(
-        "Maintenance ($/mile)",
-        0.10, 2.00, 0.70, 0.01
-    )
+    r1, r2 = st.columns(2)
 
-    fceb_efficiency = st.slider(
-        "Efficiency (miles/kg)",
-        3.0, 15.0, 8.0, 0.1
-    )
+    with r1:
+        fceb_purchase = st.slider(
+            "Purchase ($)",
+            500_000, 1_500_000, 1_000_000, 10_000
+        )
 
-    hydrogen_price = st.slider(
-        "Hydrogen price ($/kg)",
-        1.0, 20.0, 8.0, 0.25
-    )
+    with r2:
+        fceb_maintenance = st.slider(
+            "Maintenance ($/mile)",
+            0.10, 2.00, 0.70, 0.01
+        )
 
+    r3, r4 = st.columns(2)
+
+    with r3:
+        fceb_efficiency = st.slider(
+            "Efficiency (miles/kg)",
+            3.0, 15.0, 8.0, 0.1
+        )
+
+    with r4:
+        hydrogen_price = st.slider(
+            "Hydrogen ($/kg)",
+            1.0, 20.0, 8.0, 0.25
+        )
 
 with col3:
     st.markdown("**Total Miles**")
+
     lifetime_miles = st.slider(
         "Lifetime miles",
         100_000, 1_000_000, 500_000, 10_000
     )
-
-
 beb_total, fceb_total = calculate_tco(
     beb_purchase,
     fceb_purchase,
