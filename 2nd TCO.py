@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="Fleet TCO Calculator", page_icon="🚌", layout="wide")
+st.set_page_config(page_title="Fleet TCO Calculator", layout="wide")
 
 def calculate_tco(
     beb_purchase,
@@ -31,15 +31,10 @@ def calculate_tco(
 
 
 st.title("Fleet Total Cost of Ownership")
-st.caption(
-    "Compare lifetime cost for battery-electric and hydrogen fuel-cell buses "
-    "under adjustable purchase, maintenance, and fuel assumptions."
-)
 
-with st.expander("About this model — origin, question, and findings", expanded=True):
     st.markdown(
         """
-### The result, up front
+### Introduction
 At current lifetime-mile and maintenance assumptions, hydrogen becomes cost-competitive
 with battery-electric once hydrogen prices fall to roughly **$[X.XX]/kg**
 *(replace with your model's actual break-even — read it off the chart below where the
@@ -49,13 +44,6 @@ comes out ahead over the bus's lifetime.
 **What that means practically:** [e.g., "At current hydrogen prices, battery-electric
 wins unless hydrogen production costs drop substantially — which would require X, Y, or Z
 to happen (cheaper electrolysis, subsidies, regional production, etc.)."]
-
-### Where this came from
-This model started with a question raised by the **[Youth Advisory Committee]** to
-**Rep. [Torres]**: [one or two sentences on what was actually asked — e.g., "why is our
-district's transit authority choosing battery buses over hydrogen, and is that actually
-the cheaper option long-term?"]. That conversation is what led to building a model that
-could answer it with real numbers instead of assumptions.
 
 ### The question this model answers
 At what hydrogen price ($/kg) does a hydrogen fuel-cell bus become cheaper, over its
@@ -71,6 +59,7 @@ Total cost of ownership for each bus type is built from three pieces:
 
 All three are summed to get each bus type's lifetime total, then compared directly
 against each other and, in the chart below, across a full range of hydrogen prices.
+
 
         """
     )
@@ -187,6 +176,11 @@ st.line_chart(chart_df)
 
 st.markdown(
 """
+
+### Result
+
+### Interpretation
+
 ### Sources
 - [Reference 1 — e.g., FTA or DOE hydrogen bus cost data, with link]
 - [Reference 2 — e.g., local transit authority procurement documents]
