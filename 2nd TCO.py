@@ -142,15 +142,11 @@ chart_df = pd.DataFrame(
     index=pd.Index(prices, name="Hydrogen Price ($/kg)"),
 )
 st.line_chart(chart_df)
+
 st.title("Sources")
-with st.expander("References used for this project", expanded=True):
-    st.markdown(
-        """
-### Sources
+###
 - [Reference 1 — e.g., FTA or DOE hydrogen bus cost data, with link]
 - [Reference 2 — e.g., local transit authority procurement documents]
 - [Reference 3 — e.g., DOE Alternative Fuels Data Center]
 
 
- """
-    )
