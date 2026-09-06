@@ -145,13 +145,12 @@ st.line_chart(chart_df)
 
 st.title("Sources")
 
-    st.markdown(
+st.markdown(
 """
 ###
 - [Reference 1 — e.g., FTA or DOE hydrogen bus cost data, with link]
 - [Reference 2 — e.g., local transit authority procurement documents]
 - [Reference 3 — e.g., DOE Alternative Fuels Data Center]
 
-
 """
-    )
+)
