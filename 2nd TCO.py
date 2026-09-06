@@ -76,7 +76,7 @@ against each other and, in the chart below, across a full range of hydrogen pric
     )
 
 
-with st.sidebar:
+
     st.header("Battery-electric bus (BEB)")
     beb_purchase = st.slider("Purchase price ($)", 500_000, 1_200_000, 850_000, 10_000)
     beb_maintenance = st.slider("Maintenance ($/mile)", 0.10, 2.00, 0.90, 0.01)
