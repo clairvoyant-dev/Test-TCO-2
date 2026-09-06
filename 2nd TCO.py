@@ -68,6 +68,7 @@ against each other and, in the chart below, across a full range of hydrogen pric
 
 
 st.subheader("Adjust Input Values")
+col1, col2, col3 = st.columns([2, 2, 1])
 
 with col1:
     st.markdown("** Battery-electric bus (BEB)**")
