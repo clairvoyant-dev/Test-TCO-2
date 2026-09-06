@@ -154,14 +154,22 @@ difference = abs(beb_total - fceb_total)
 recommendation = "Battery Electric Bus" if beb_total < fceb_total else "Hydrogen Fuel Cell Bus"
 
 col1, col2, col3, col4 = st.columns(4)
-#col1.metric("Battery TCO", f"${beb_total:,.0f}")
+
 with col1:
     st.caption("Battery TCO")
     st.write(f"**${beb_total:,.0f}**")
-col2.metric("Hydrogen TCO", f"${fceb_total:,.0f}")
-col3.metric("Difference", f"${difference:,.0f}")
-col4.metric("Recommendation", recommendation)
+with col2:
+    st.caption("Hydrogen TCO")
+    st.write(f"**${fceb_total:,.0f}**")
 
+with col3:
+    st.caption("Difference")
+    st.write(f"**${difference:,.0f}**")
+
+with col4:
+    st.caption("Recommendation")
+    st.write(f"**{recommendation}**")
+    
 st.subheader("Sensitivity to hydrogen price")
 st.caption(
     "Hydrogen TCO traced across $1–$20/kg, all other inputs held at current slider values. "
