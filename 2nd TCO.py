@@ -156,16 +156,16 @@ recommendation = "Battery Electric Bus" if beb_total < fceb_total else "Hydrogen
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.write(f"**Battery TCO: ${beb_total:,.0f}**")
+    st.write(f"**Battery TCO - ${beb_total:,.0f}**")
 
 with col2:
-    st.write(f"**Hydrogen TCO: ${fceb_total:,.0f}**")
+    st.write(f"**Hydrogen TCO - ${fceb_total:,.0f}**")
 
 with col3:
-    st.write(f"**Difference: ${difference:,.0f}**")
+    st.write(f"**Difference - ${difference:,.0f}**")
 
 with col4:
-    st.write(f"**Recommendation: {recommendation}**")
+    st.write(f"**Recommendation - {recommendation}**")
     
 st.subheader("Sensitivity to hydrogen price")
 st.caption(
