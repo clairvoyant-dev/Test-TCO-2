@@ -133,7 +133,7 @@ with col2:
         )
 
 with col3:
-    st.markdown("**Total Miles**")
+    st.markdown("** Total Miles **")
 
     lifetime_miles = st.slider(
         "Lifetime miles",
