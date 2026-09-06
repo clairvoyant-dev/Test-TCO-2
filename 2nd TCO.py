@@ -72,10 +72,6 @@ Total cost of ownership for each bus type is built from three pieces:
 All three are summed to get each bus type's lifetime total, then compared directly
 against each other and, in the chart below, across a full range of hydrogen prices.
 
-### Sources
-- [Reference 1 — e.g., FTA or DOE hydrogen bus cost data, with link]
-- [Reference 2 — e.g., local transit authority procurement documents]
-- [Reference 3 — e.g., DOE Alternative Fuels Data Center]
         """
     )
 
